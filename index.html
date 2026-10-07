@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>가격 알림</title>
+<style>
+body{font-family:sans-serif;max-width:480px;margin:0 auto;padding:16px;background:#111;color:#eee}
+h1{font-size:20px}
+input,button{font-size:18px;padding:10px;border-radius:8px;border:1px solid #444;background:#222;color:#eee;box-sizing:border-box}
+input{width:100%;margin-bottom:8px}
+button{background:#1a7f37;border-color:#1a7f37;color:#fff}
+button.del{background:#b62324;border-color:#b62324;padding:6px 12px;font-size:15px}
+button.gray{background:#333;border-color:#555}
+.row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #333}
+#msg{margin:10px 0;color:#7ee787;min-height:22px}
+#box{margin-bottom:20px}
+</style>
+</head>
+<body>
+<h1>🔔 가격 알림</h1>
+<div id="setup" style="display:none">
+<p>처음 한 번만: 열쇠(토큰)를 붙여넣고 저장을 눌러요. 이 폰 안에만 저장돼요.</p>
+<input id="tkin" type="password" placeholder="github_pat_...">
+<button onclick="saveTk()">열쇠 저장</button>
+</div>
+<div id="main" style="display:none">
+<div id="box">
+<input id="coin" placeholder="코인 (예: BTC)" autocapitalize="characters">
+<input id="price" type="number" inputmode="decimal" placeholder="가격 (예: 83000)">
+<button onclick="addAlert()">알림 걸기</button>
+</div>
+<div id="msg"></div>
+<div id="list"></div>
+<p style="margin-top:30px"><button class="gray" onclick="resetTk()">열쇠 지우기</button></p>
+</div>
+<script>
+var REPO = "bin2920603-bot/CoinPrice";
+var FILE = "alerts.json";
+var sha = "";
+var list = [];
+
+function tk() { return localStorage.getItem("tk") || ""; }
+function say(t) { document.getElementById("msg").textContent = t; }
+
+async function api(method, body) {
+  var url = "https://api.github.com/repos/" + REPO + "/contents/" + FILE + "?ref=main";
+  var r = await fetch(url, {
+    method: method,
+    cache: "no-store",
+    headers: {
+      "Authorization": "Bearer " + tk(),
+      "Accept": "application/vnd.github+json"
+    },
+    body: body ? JSON.stringify(body) : undefined
+  });
+  if (!r.ok) throw new Error("오류 " + r.status);
+  return r.json();
+}
+
+async function load() {
+  try {
+    var j = await api("GET");
+    sha = j.sha;
+    var txt = decodeURIComponent(escape(atob(j.content.replace(/\n/g, ""))));
+    list = JSON.parse(txt);
+    render();
+    say("");
+  } catch (e) {
+    say("불러오기 실패: " + e.message);
+  }
+}
+
+async function save() {
+  var txt = JSON.stringify(list, null, 2);
+  var content = btoa(unescape(encodeURIComponent(txt)));
+  var j = await api("PUT", { message: "alerts", content: content, sha: sha });
+  sha = j.content.sha;
+}
+
+function render() {
+  var el = document.getElementById("list");
+  el.innerHTML = "";
+  if (list.length === 0) {
+    el.textContent = "걸어 둔 알림이 없어요.";
+    return;
+  }
+  list.forEach(function (a, i) {
+    var d = document.createElement("div");
+    d.className = "row";
+    var s = document.createElement("span");
+    s.textContent = a.coin + "  " + Number(a.price).toLocaleString();
+    var b = document.createElement("button");
+    b.className = "del";
+    b.textContent = "지우기";
+    b.onclick = function () { removeAlert(i); };
+    d.appendChild(s);
+    d.appendChild(b);
+    el.appendChild(d);
+  });
+}
+
+async function addAlert() {
+  var coin = document.getElementById("coin").value.trim().toUpperCase();
+  var price = parseFloat(document.getElementById("price").value);
+  if (!coin || !(price > 0)) { say("코인과 가격을 확인해 주세요."); return; }
+  for (var i = 0; i < list.length; i++) {
+    if (list[i].coin === coin && Number(list[i].price) === price) {
+      say("이미 있는 알림이에요.");
+      return;
+    }
+  }
+  list.push({ coin: coin, price: price });
+  say("저장 중...");
+  try {
+    await save();
+    document.getElementById("coin").value = "";
+    document.getElementById("price").value = "";
+    render();
+    say("걸었어요! 5분 안에 적용돼요.");
+  } catch (e) {
+    list.pop();
+    say("저장 실패: " + e.message);
+    load();
+  }
+}
+
+async function removeAlert(i) {
+  var old = list.slice();
+  list.splice(i, 1);
+  say("저장 중...");
+  try {
+    await save();
+    render();
+    say("지웠어요.");
+  } catch (e) {
+    list = old;
+    say("저장 실패: " + e.message);
+    load();
+  }
+}
+
+function saveTk() {
+  var v = document.getElementById("tkin").value.trim();
+  if (!v) return;
+  localStorage.setItem("tk", v);
+  start();
+}
+
+function resetTk() {
+  localStorage.removeItem("tk");
+  start();
+}
+
+function start() {
+  var has = tk() !== "";
+  document.getElementById("setup").style.display = has ? "none" : "block";
+  document.getElementById("main").style.display = has ? "block" : "none";
+  if (has) load();
+}
+
+start();
+</script>
+</body>
+</html>
