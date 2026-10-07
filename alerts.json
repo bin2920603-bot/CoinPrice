@@ -1,4 +1,14 @@
 [
-  {"coin": "BTC", "price": 81694},
-  {"coin": "BTC", "price": 83300}
+  {
+    "coin": "BTC",
+    "price": 81694
+  },
+  {
+    "coin": "BTC",
+    "price": 83300
+  },
+  {
+    "coin": "BTC",
+    "price": 90000
+  }
 ]
