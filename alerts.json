@@ -10,5 +10,9 @@
   {
     "coin": "AAVE",
     "price": 140.33
+  },
+  {
+    "coin": "XAG",
+    "price": 62.39
   }
 ]
