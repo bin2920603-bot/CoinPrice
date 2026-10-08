@@ -6,5 +6,9 @@
   {
     "coin": "BTC",
     "price": 83300
+  },
+  {
+    "coin": "AAVE",
+    "price": 140.33
   }
 ]
