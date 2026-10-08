@@ -14,5 +14,9 @@
   {
     "coin": "XAG",
     "price": 62.39
+  },
+  {
+    "coin": "AMZN",
+    "price": 257.13
   }
 ]
