@@ -18,5 +18,9 @@
   {
     "coin": "AMZN",
     "price": 257.13
+  },
+  {
+    "coin": "AMZN",
+    "price": 259
   }
 ]
