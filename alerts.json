@@ -1,6 +1,10 @@
 [
   {
     "coin": "AMZN",
+    "price": 259
+  },
+  {
+    "coin": "AMZN",
     "price": 249.23
   }
 ]
