@@ -1,17 +1,5 @@
 [
   {
-    "coin": "BTC",
-    "price": 83300
-  },
-  {
-    "coin": "AAVE",
-    "price": 140.33
-  },
-  {
-    "coin": "XAG",
-    "price": 62.39
-  },
-  {
     "coin": "AMZN",
     "price": 257.13
   },
