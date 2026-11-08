@@ -2,5 +2,9 @@
   {
     "coin": "RSRUSDT",
     "price": 0.001677
+  },
+  {
+    "coin": "BLENDUSDT",
+    "price": 0.05528
   }
 ]
