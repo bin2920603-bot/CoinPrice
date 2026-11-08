@@ -6,5 +6,9 @@
   {
     "coin": "BLENDUSDT",
     "price": 0.05528
+  },
+  {
+    "coin": "PIEVERSEUSDT",
+    "price": 1.3638
   }
 ]
