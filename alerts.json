@@ -82,5 +82,9 @@
   {
     "coin": "SOXS",
     "price": 64.62
+  },
+  {
+    "coin": "UNI",
+    "price": 6.676
   }
 ]
