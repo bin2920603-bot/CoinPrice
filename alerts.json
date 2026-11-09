@@ -90,5 +90,9 @@
   {
     "coin": "SUIU",
     "price": 0.8578
+  },
+  {
+    "coin": "TROMP",
+    "price": 1.203
   }
 ]
