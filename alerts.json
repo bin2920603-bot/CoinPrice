@@ -62,5 +62,9 @@
   {
     "coin": "AKE",
     "price": 0.005795
+  },
+  {
+    "coin": "SPCX",
+    "price": 138.29
   }
 ]
