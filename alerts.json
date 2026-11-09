@@ -78,5 +78,9 @@
   {
     "coin": "KORU",
     "price": 7.555
+  },
+  {
+    "coin": "SOXS",
+    "price": 64.62
   }
 ]
