@@ -66,5 +66,9 @@
   {
     "coin": "SPCX",
     "price": 138.29
+  },
+  {
+    "coin": "PUMP",
+    "price": 0.003737
   }
 ]
