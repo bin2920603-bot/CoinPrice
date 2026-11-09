@@ -10,5 +10,9 @@
   {
     "coin": "PIEVERSEUSDT",
     "price": 1.3638
+  },
+  {
+    "coin": "BTC",
+    "price": 75881
   }
 ]
