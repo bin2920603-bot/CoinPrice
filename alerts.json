@@ -74,5 +74,9 @@
   {
     "coin": "WLD",
     "price": 0.3338
+  },
+  {
+    "coin": "KORU",
+    "price": 7.555
   }
 ]
