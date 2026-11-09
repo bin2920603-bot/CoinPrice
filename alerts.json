@@ -106,5 +106,9 @@
   {
     "coin": "AVAX",
     "price": 8.871
+  },
+  {
+    "coin": "LINK",
+    "price": 10.757
   }
 ]
