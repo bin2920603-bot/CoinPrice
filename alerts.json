@@ -42,5 +42,9 @@
   {
     "coin": "XAU",
     "price": 4086
+  },
+  {
+    "coin": "DOGE",
+    "price": 0.07041
   }
 ]
