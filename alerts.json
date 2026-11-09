@@ -94,5 +94,9 @@
   {
     "coin": "TROMP",
     "price": 1.203
+  },
+  {
+    "coin": "ARB",
+    "price": 0.17295
   }
 ]
