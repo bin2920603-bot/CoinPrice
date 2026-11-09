@@ -34,5 +34,9 @@
   {
     "coin": "SOXL",
     "price": 51.71
+  },
+  {
+    "coin": "XRP",
+    "price": 1.1507
   }
 ]
