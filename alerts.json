@@ -30,5 +30,9 @@
   {
     "coin": "SNDK",
     "price": 887
+  },
+  {
+    "coin": "SOXL",
+    "price": 51.71
   }
 ]
