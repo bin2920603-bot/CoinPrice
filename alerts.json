@@ -22,5 +22,9 @@
   {
     "coin": "ZEC",
     "price": 1224
+  },
+  {
+    "coin": "SOL",
+    "price": 88.42
   }
 ]
