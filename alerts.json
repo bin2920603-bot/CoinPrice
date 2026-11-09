@@ -70,5 +70,9 @@
   {
     "coin": "PUMP",
     "price": 0.003737
+  },
+  {
+    "coin": "WLD",
+    "price": 0.3338
   }
 ]
