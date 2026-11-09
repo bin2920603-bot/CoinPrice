@@ -98,5 +98,9 @@
   {
     "coin": "ARB",
     "price": 0.17295
+  },
+  {
+    "coin": "PIEVERSE",
+    "price": 1.5635
   }
 ]
