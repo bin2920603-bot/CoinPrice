@@ -26,5 +26,9 @@
   {
     "coin": "SOL",
     "price": 88.42
+  },
+  {
+    "coin": "SNDK",
+    "price": 887
   }
 ]
