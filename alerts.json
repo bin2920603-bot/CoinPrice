@@ -50,5 +50,9 @@
   {
     "coin": "HYPE",
     "price": 76.679
+  },
+  {
+    "coin": "MU",
+    "price": 717.71
   }
 ]
