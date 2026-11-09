@@ -18,5 +18,9 @@
   {
     "coin": "ETH",
     "price": 2182
+  },
+  {
+    "coin": "ZEC",
+    "price": 1224
   }
 ]
