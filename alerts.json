@@ -86,5 +86,9 @@
   {
     "coin": "UNI",
     "price": 6.676
+  },
+  {
+    "coin": "SUIU",
+    "price": 0.8578
   }
 ]
