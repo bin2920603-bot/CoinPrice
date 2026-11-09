@@ -14,5 +14,9 @@
   {
     "coin": "BTC",
     "price": 75881
+  },
+  {
+    "coin": "ETH",
+    "price": 2182
   }
 ]
