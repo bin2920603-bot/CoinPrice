@@ -110,5 +110,9 @@
   {
     "coin": "LINK",
     "price": 10.757
+  },
+  {
+    "coin": "BNB",
+    "price": 690.34
   }
 ]
