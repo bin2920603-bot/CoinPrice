@@ -66,5 +66,9 @@
   {
     "coin": "NEAR",
     "price": 3.655
+  },
+  {
+    "coin": "SPC",
+    "price": 137.43
   }
 ]
