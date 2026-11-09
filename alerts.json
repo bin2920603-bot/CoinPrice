@@ -114,5 +114,9 @@
   {
     "coin": "BNB",
     "price": 690.34
+  },
+  {
+    "coin": "SEIU",
+    "price": 0.04497
   }
 ]
