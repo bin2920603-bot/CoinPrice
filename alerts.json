@@ -38,5 +38,9 @@
   {
     "coin": "XRP",
     "price": 1.1507
+  },
+  {
+    "coin": "XAU",
+    "price": 4086
   }
 ]
