@@ -118,5 +118,9 @@
   {
     "coin": "SEIU",
     "price": 0.04497
+  },
+  {
+    "coin": "UVXY",
+    "price": 19.78
   }
 ]
