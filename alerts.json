@@ -122,5 +122,9 @@
   {
     "coin": "UVXY",
     "price": 19.78
+  },
+  {
+    "coin": "NVDA",
+    "price": 185.24
   }
 ]
