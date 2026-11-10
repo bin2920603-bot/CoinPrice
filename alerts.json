@@ -130,5 +130,9 @@
   {
     "coin": "INIT",
     "price": 0.17907
+  },
+  {
+    "coin": "PIEVERSE",
+    "price": 1.9673
   }
 ]
