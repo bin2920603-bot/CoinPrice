@@ -126,5 +126,9 @@
   {
     "coin": "NVDA",
     "price": 185.24
+  },
+  {
+    "coin": "INIT",
+    "price": 0.17907
   }
 ]
