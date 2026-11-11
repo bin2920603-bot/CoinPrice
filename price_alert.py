@@ -85,9 +85,15 @@ def main():
                     st["t"] = last_ts + 60000
                     sent_count += 1
         else:
-            if last_close < price:
-                st["s"] = "below"
-                st["t"] = last_ts + 60000
+            lows = [l for (ts, h, l, c) in rows if ts >= st["t"]]
+            if lows and min(lows) <= price:
+                msg = ("🔔 [가격 도달] " + coin + " " + format(price, ",")
+                       + " 아래로 내려옴\n현재가 " + str(last_close)
+                       + " | 최근 최저가 " + str(min(lows)))
+                if send(msg):
+                    st["s"] = "below"
+                    st["t"] = last_ts + 60000
+                    sent_count += 1
 
     for k in list(state.keys()):
         if k not in keys:
