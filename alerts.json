@@ -134,5 +134,9 @@
   {
     "coin": "PIEVERSE",
     "price": 1.9673
+  },
+  {
+    "coin": "BARD",
+    "price": 0.1214
   }
 ]
